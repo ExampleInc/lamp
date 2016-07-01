@@ -31,6 +31,15 @@ node['lamp']['content_files'].each do |file|
   end
 end
 
+
+# Write the home page.
+template "#{node['lamp']['document_root']}/dbvars.php" do
+  source 'dbvars.php.erb'
+  mode '0644'
+  owner node['lamp']['user']
+  group node['lamp']['group']
+end
+
 # Install the mod_php5 Apache module.
 httpd_module 'php5' do
   instance 'customers'

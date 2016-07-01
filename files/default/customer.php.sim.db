@@ -13,10 +13,9 @@ class Customer {
 }
 
 function get_sample_customers() {
-  $servername = "127.0.0.1";
-  $username = "db_admin";
-  $password = "Chef123";
-  $dbname = "lampdb";
+
+  include "dbvars.php";
+
   $array = array();
 
   // Create connection
