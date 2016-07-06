@@ -17,7 +17,7 @@ $places .= ']}\'';
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Customers</title>
+    <title><?php gethostname(); ?>: Customers</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
