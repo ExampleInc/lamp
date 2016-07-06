@@ -6,7 +6,7 @@ description 'Installs/Configures lamp'
 long_description 'Installs/Configures lamp'
 issues_url 'aaa'
 source_url 'bbb'
-version '3.0.8'
+version '3.0.10'
 
 depends 'firewall', '~> 2.4.0'
 depends 'chef-sugar', '>= 0.0.0'
