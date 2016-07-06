@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title><?php gethostname(); ?>: Customers</title>
+    <title><?php echo gethostname(); ?>: Customers</title>
     <style>
       table, th, td {
         border: 1px solid black;
