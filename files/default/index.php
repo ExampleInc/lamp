@@ -6,8 +6,10 @@ $places .= '\'{"type": "FeatureCollection","features": [';
 
 // Append data from each row
 $comma = "";
+$id = 0;
 foreach (get_sample_customers() as $customer) {
-  $places .= $comma.'{ "type": "Feature", "properties": { "name": "'.$customer->first_name." ".$customer->last_name.'" }, "geometry": { "type": "Point", "coordinates": [ '.$customer->longitude.', '.$customer->latitude.' ] } }';
+  $id = $id + 1;
+  $places .= $comma.'{ "type": "Feature", "properties": { "name": "'$id." ".$customer->first_name." ".$customer->last_name.'" }, "geometry": { "type": "Point", "coordinates": [ '.$customer->longitude.', '.$customer->latitude.' ] } }';
   $comma = ",";
 }
 
