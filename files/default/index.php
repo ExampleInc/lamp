@@ -6,8 +6,8 @@ $places .= '\'{"type": "FeatureCollection","features": [';
 
 // Append data from each row
 $comma = "";
-foreach (get_sample_customers() as $customer) {
-  $places .= $comma.'{ "type": "Feature", "properties": { "name": "'.$customer->first_name." ".$customer->last_name.'" }, "geometry": { "type": "Point", "coordinates": [ '.$customer->longitude.', '.$customer->latitude.' ] } }';
+foreach (get_sample_customers() as $key=>$customer) {
+  $places .= $comma.'{ "type": "Feature", "properties": { "name": "['.($key+1)."] ".$customer->first_name." ".$customer->last_name.'" }, "geometry": { "type": "Point", "coordinates": [ '.$customer->longitude.', '.$customer->latitude.' ] } }';
   $comma = ",";
 }
 

@@ -104,14 +104,14 @@ function ready(error, world) {
       .on("mouseover", function(d, i) {
         d3.select(this)
           .style("fill", "orange")
-          .style("font", "14px sans-serif")
+          .style("font", "20px sans-serif")
           .style("font-weight", "bold")
           .style("text-shadow", "-1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000")
         })
       .on("mouseout", function(d, i) {
         d3.select(this)
-          .style("fill", "black")
-          .style("font", "9px sans-serif")
+          .style("fill", "blue")
+          .style("font", "16px sans-serif")
           .style("font-weight", "normal")
           .style("text-shadow", "none");
         });

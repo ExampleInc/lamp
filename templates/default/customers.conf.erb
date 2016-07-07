@@ -1,3 +1,5 @@
+LogFormat "%h %l %u %t \"%r\" %>s %O \"%{Referer}i\" \"%{User-Agent}i\"" combined
+
 <VirtualHost *:80>
   ServerName <%= node['hostname'] %>
   ServerAdmin 'ops@example.com'
