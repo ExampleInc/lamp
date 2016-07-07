@@ -25,4 +25,6 @@ case $1 in
   ;;
 esac
 
+echo "Don't forget to increase the cookbook's version."
+
 exit 0
