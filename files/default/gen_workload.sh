@@ -3,7 +3,7 @@
 
 makeload_on() {
   dst_host=$1
-  reqs=$(shuf -i101-10000 -n1)
+  reqs=$(shuf -i101-5000 -n1)
   ab -c 100 -n $reqs $1 &
 }
 
