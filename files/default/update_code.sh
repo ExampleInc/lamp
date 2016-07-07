@@ -13,6 +13,9 @@ case $1 in
     cat index.php.vis > index.php
     cat customer.php.vis.db > customer.php
   ;;
+  vis2)
+    cat cat index.php.vis2 > index.php
+    cat customer.php.vis.db > customer.php
   *)
     echo "Use vis or sim as an argument. exit"; exit 1
   ;;
