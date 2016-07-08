@@ -18,8 +18,8 @@ makeload_on() {
       if [ $i -lt 2 ]; then
         order='cancelled' 
       fi
-      echo "URL: "$1?item=$use_item\&status=$order
-      #ab -c 10 -n $reqs $1\&item=$use_item &
+      url="$1?item=$use_item&status=$order"
+      ab -c 10 -n $reqs "$url" &
   done
 }
 
