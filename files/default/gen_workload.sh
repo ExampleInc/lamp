@@ -1,11 +1,28 @@
 #!/bin/bash
 
+positions=('Socks' 'Apples' 'Orange-Juice' 'Orange' 'Dirol' 'PlayStation4' 'T-shirts' 'iPhone5' 'iPhone6' 'iPhone7' 'iPhone8' 'Pizza' 'McBurgers' 'Pens' 'TV-addons' 'Egypt-travels' 'Tesla-Model-S' 'MacBook-Air' 'MercedezBenz-Q' 'Potato' 'Snickers' 'Intel-Xeon-Extreme-9909-CPU')
+
+choose_item() {
+  count_items=${#positions[@]}
+  item=$(shuf -i0-$count_items -n1)
+  let item=item-1
+  echo ${positions[$item]}
+}
 
 makeload_on() {
   dst_host=$1
-  reqs=$(shuf -i101-5000 -n1)
-  ab -c 100 -n $reqs $1 &
+  reqs=$(shuf -i1-50 -n1)
+  for i in `seq 1 10`; do
+      use_item=`choose_item`
+      order='ordered'
+      if [ $i -lt 2 ]; then
+        order='cancelled' 
+      fi
+      url="$1?item=$use_item&status=$order"
+      ab -c 10 -n $reqs "$url" &
+  done
 }
+
 
 makeload_on http://acceptance01.example.com/index.php
 makeload_on http://union01.example.com/index.php
