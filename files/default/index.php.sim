@@ -24,6 +24,8 @@
     echo "\t\t<td>$customer->first_name</td>\n";
     echo "\t\t<td>$customer->last_name</td>\n";
     echo "\t\t<td>$customer->email</td>\n";
+    echo "\t\t<td>$customer->latitude</td>\n";
+    echo "\t\t<td>$customer->longitude</td>\n";
     echo "\t</tr>\n";
   }
   echo "</table>";
