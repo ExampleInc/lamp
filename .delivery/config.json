@@ -1,11 +1,13 @@
 {
   "version": "2",
   "build_cookbook": {
-    "git": "https://github.com/opscode-cookbooks/delivery-truck.git",
-    "name": "delivery-truck",
-    "branch": "master"
+    "name": "build-cookbook",
+    "path": ".delivery/build-cookbook"
   },
   "skip_phases": [],
+  "build_nodes": {
+    "default" : ["build-node-demo-1", "build-node-demo-2", "build-node-demo-3"],
+  },
   "delivery-truck": {
     "publish": {
       "chef_server": true
