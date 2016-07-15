@@ -11,12 +11,12 @@ cb.manifest['files'].each do |cbf|
 
   filepath = cbf['path']
   filename = cbf['name']
- 
-  if filename.end_with? ".php"
-    execute filename do
-      command 'php -l ' + filepath + '/' + filename
-      action :run
-    end 
+
+  next if not filepath.end_with? "php"
+
+  execute filename do
+    command 'php -l ' + filepath + '/' + filename
+    action :run
   end 
   
 end
