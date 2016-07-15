@@ -1,6 +1,6 @@
 #!/bin/bash
 
-positions=('Socks' 'Apples' 'Orange-Juice' 'Orange' 'Dirol' 'PlayStation4' 'T-shirts' 'iPhone5' 'iPhone6' 'iPhone7' 'iPhone8' 'Pizza' 'McBurgers' 'Pens' 'TV-addons' 'Egypt-travels' 'Tesla-Model-S' 'MacBook-Air' 'MercedezBenz-Q' 'Potato' 'Snickers' 'Intel-Xeon-Extreme-9909-CPU')
+positions=('Socks' 'Apples' 'Orange-Juice' 'Orange' 'Dirol' 'PlayStation4' 'T-shirts' 'iPhone5' 'iPhone6' 'iPhone7' 'iPhone8' 'Pizza' 'McBurgers' 'Pens' 'TV-addons' 'Egypt-travels' 'Tesla-Model-S' 'MacBook-Air' 'MercedezBenz-Q' 'Potato' 'Snickers' 'Intel-Xeon-Extreme-9909-CPU' 'Flowers' 'Balls' 'Backpacks' 'Wifi-routers')
 
 choose_item() {
   count_items=${#positions[@]}
@@ -11,7 +11,7 @@ choose_item() {
 
 makeload_on() {
   dst_host=$1
-  reqs=$(shuf -i1-50 -n1)
+  reqs=$(shuf -i1-5 -n1)
   for i in `seq 1 10`; do
       use_item=`choose_item`
       order='ordered'
@@ -19,7 +19,7 @@ makeload_on() {
         order='cancelled' 
       fi
       url="$1?item=$use_item&status=$order"
-      ab -c 10 -n $reqs "$url" &
+      ab -c $reqs -n $reqs "$url" &
   done
 }
 
