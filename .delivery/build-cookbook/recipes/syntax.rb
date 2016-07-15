@@ -7,13 +7,18 @@ include_recipe 'delivery-truck::syntax'
 
 cb = run_context.cookbook_collection[cookbook_name]
 
-execute 'index.php' do
-  command 'php -l ' + cb.manifest['files'] + '/default/index.php'
-  action :run
+cb.manifest['files'].each do |cbf|
+
+  filepath = cbf['path']
+  filename = cbf['name']
+ 
+  if filename.end_with? ".php"
+    execute filename do
+      command 'php -l ' + filepath + '/' + filename
+      action :run
+    end 
+  end 
+  
 end
 
-execute 'customer.php' do
-  command 'php -l ' + cb.manifest['files'] + '/default/customer.php'
-  action :run
-end
 
