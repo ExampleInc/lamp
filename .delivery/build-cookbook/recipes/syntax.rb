@@ -14,6 +14,9 @@ cb.manifest['files'].each do |cbf|
 
   next if not filepath.end_with? "php"
 
+  log 'PROCESSING FILE: ' + filepath + '/' + filename
+
+
   execute filename do
     command 'php -l ' + filepath + '/' + filename
     action :run
