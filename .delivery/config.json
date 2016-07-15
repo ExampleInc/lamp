@@ -5,6 +5,9 @@
     "path": ".delivery/build-cookbook"
   },
   "skip_phases": [],
+  "build_nodes": {
+    "default" : ["build-node-demo-1", "build-node-demo-2", "build-node-demo-3"],
+  },
   "delivery-truck": {
     "publish": {
       "chef_server": true
