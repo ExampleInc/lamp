@@ -7,11 +7,11 @@ include_recipe 'delivery-truck::syntax'
 
 execute 'index.php' do
   command 'php -l ../../../files/default/index.php'
-  action :nothing
+  action :run
 end
 
 execute 'customer.php' do
   command 'php -l ../../../files/default/customer.php'
-  action :nothing
+  action :run
 end
 
