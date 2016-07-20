@@ -4,7 +4,9 @@
     "name": "build-cookbook",
     "path": ".delivery/build-cookbook"
   },
-  "skip_phases": [],
+  "skip_phases": [
+   "unit"
+  ],
   "delivery-truck": {
     "publish": {
       "chef_server": true
