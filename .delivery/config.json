@@ -5,7 +5,11 @@
     "path": ".delivery/build-cookbook"
   },
   "skip_phases": [
-   "unit"
+   "unit",
+   "quality",
+   "security",
+   "smoke",
+   "functional"
   ],
   "delivery-truck": {
     "publish": {
