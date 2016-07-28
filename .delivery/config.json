@@ -5,6 +5,7 @@
     "path": ".delivery/build-cookbook"
   },
   "skip_phases": [
+   "unit",
    "quality",
    "security",
    "smoke",
